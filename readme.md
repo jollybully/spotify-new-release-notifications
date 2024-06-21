@@ -58,7 +58,7 @@ pip install spotipy
 2.  **Run the script**:
 
     ```sh
-    python your_script_name.py
+    python spotify-check.py
     ```
 
 ## Functionality
