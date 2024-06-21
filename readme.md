@@ -21,7 +21,7 @@ Create a `config.py` file in the same directory as the script with the following
 SPOTIPY_CLIENT_ID = 'your_spotify_client_id'
 SPOTIPY_CLIENT_SECRET = 'your_spotify_client_secret'
 SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
-SCOPE = 'user-follow-read'
+SCOPE = 'user-follow-read user-read-recently-played'
 CACHE_PATH = '.spotipyoauthcache'
 LMS_SERVER = 'your_lms_server_url'
 LMS_PLAYER = 'your_lms_player_mac_address'
