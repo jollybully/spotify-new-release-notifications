@@ -1,4 +1,4 @@
-# Spotify New Releases Tracker
+# Spotify New Release Notifications
 
 ## Overview
 
