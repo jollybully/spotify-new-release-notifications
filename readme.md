@@ -17,13 +17,10 @@ Before running the script, ensure you have the following:
 
 Create a `config.py` file in the same directory as the script with the following content, replacing the placeholders with your actual credentials:
 
-python
-
-Copy code
-
-`SPOTIPY_CLIENT_ID = 'your_spotify_client_id'
+```python
+SPOTIPY_CLIENT_ID = 'your_spotify_client_id'
 SPOTIPY_CLIENT_SECRET = 'your_spotify_client_secret'
-SPOTIPY_REDIRECT_URI = 'your_spotify_redirect_uri'
+SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
 SCOPE = 'user-follow-read'
 CACHE_PATH = '.spotipyoauthcache'
 LMS_SERVER = 'your_lms_server_url'
@@ -33,17 +30,26 @@ SMTP_PORT = 587  # or your SMTP port
 SENDER_EMAIL = 'your_email'
 SENDER_PASSWORD = 'your_email_password'
 RECIPIENT_EMAIL = 'recipient_email'
-LAST_CHECK_FILE = 'last_check.txt'`
+LAST_CHECK_FILE = 'last_check.txt'
+```
+
+## Spotify Developer Account Setup
+
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and log in with your Spotify account.
+
+2. Click on "Create an App" and fill in the required information.
+
+3. After creating the app, you will be redirected to the app's dashboard. Note down the **Client ID**, **Client Secret**, and add the above **Redirect URI**.
+
+4. Replace the corresponding placeholders in the `config.py` file with your Spotify app credentials.
 
 ## Installation
 
-Install the required Python packages:
+To install the required Python packages, run the following command in your terminal:
 
-sh
-
-Copy code
-
-`pip install spotipy`
+```sh
+pip install spotipy
+```
 
 ## Usage
 
@@ -51,11 +57,9 @@ Copy code
 
 2.  **Run the script**:
 
-    sh
-
-    Copy code
-
-    `python your_script_name.py`
+    ```sh
+    python your_script_name.py
+    ```
 
 ## Functionality
 
