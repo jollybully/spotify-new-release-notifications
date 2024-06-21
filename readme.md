@@ -25,15 +25,15 @@ Copy code
 SPOTIPY_CLIENT_SECRET = 'your_spotify_client_secret'
 SPOTIPY_REDIRECT_URI = 'your_spotify_redirect_uri'
 SCOPE = 'user-follow-read'
-CACHE_PATH = 'path_to_cache_file'
+CACHE_PATH = '.spotipyoauthcache'
 LMS_SERVER = 'your_lms_server_url'
-LMS_PLAYER = 'your_lms_player_id'
+LMS_PLAYER = 'your_lms_player_mac_address'
 SMTP_SERVER = 'your_smtp_server'
 SMTP_PORT = 587  # or your SMTP port
 SENDER_EMAIL = 'your_email'
 SENDER_PASSWORD = 'your_email_password'
 RECIPIENT_EMAIL = 'recipient_email'
-LAST_CHECK_FILE = 'path_to_last_check_file'`
+LAST_CHECK_FILE = 'last_check.txt'`
 
 ## Installation
 
@@ -73,3 +73,5 @@ The email contains the following details for each new release:
 - Album/Song Name
 - Release Date
 - Links to play on Spotify and LMS
+
+## Set Up a Cron Job

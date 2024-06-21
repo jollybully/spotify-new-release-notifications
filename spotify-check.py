@@ -28,7 +28,7 @@ def get_spotify_client():
         # If cache doesn't exist, we need to go through the authorization flow
         print("Please visit this URL to authorize the application: ",
               auth_manager.get_authorize_url())
-        auth_code = input("Enter the URL you were redirected to: ")
+        auth_code = input("Enter the auth code returned in the url: ")
         auth_manager.get_access_token(auth_code)
         print("Authorization successful. You can now run the script normally.")
 
@@ -87,39 +87,6 @@ def get_new_releases(sp, artists, last_check):
     return new_releases
 
 
-# def send_email(new_releases):
-#     message = "New releases since last check:\n\n"
-
-#     if new_releases['albums']:
-#         message += "New Albums:\n"
-#         for release in new_releases['albums']:
-#             message += f"{release[1]} - {release[2]} (Released on {release[0]})\n"
-#             message += f"Listen on Spotify: {release[3]}\n"
-#             message += f"Play on LMS: {release[4]}\n\n"
-
-#     if new_releases['singles']:
-#         message += "New Singles:\n"
-#         for release in new_releases['singles']:
-#             message += f"{release[1]} - {release[2]} (Released on {release[0]})\n"
-#             message += f"Listen on Spotify: {release[3]}\n"
-#             message += f"Play on LMS: {release[4]}\n\n"
-
-#     if all([SMTP_SERVER, SENDER_EMAIL, SENDER_PASSWORD, RECIPIENT_EMAIL]):
-#         # Email sending code
-#         subject = "New Spotify Releases from Your Followed Artists"
-#         msg = MIMEText(message)
-#         msg['Subject'] = subject
-#         msg['From'] = SENDER_EMAIL
-#         msg['To'] = RECIPIENT_EMAIL
-
-#         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-#             server.starttls()
-#             server.login(SENDER_EMAIL, SENDER_PASSWORD)
-#             server.send_message(msg)
-#         print("Email sent successfully.")
-#     else:
-#         print("Email credentials not set. Logging to console instead.")
-#         print(message)
 def send_email(new_releases):
     message = MIMEMultipart("alternative")
     text = "New releases since last check:\n\n"
@@ -176,6 +143,7 @@ def send_email(new_releases):
     else:
         print("Email credentials not set. Logging to console instead.")
         print(message)
+
 
 def main():
     sp = get_spotify_client()
