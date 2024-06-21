@@ -1,0 +1,6 @@
+config.py
+.vscode/settings.json
+.spotipyoauthcache
+last_check.txt
+spotify-check.code-workspace
+__pycache__/config.cpython-39.pyc
